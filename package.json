@@ -4,5 +4,10 @@
   "tags": ["uid"],
   "version": "0.0.1",
   "dependencies": {
+  },
+  "component": {
+    "scripts": {
+      "uid2/index.js": "index.js"
+    }
   }
 }

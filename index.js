@@ -18,11 +18,12 @@ var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
  * @api private
  */
 function tostr(bytes) {
-  var chars, r, i;
+  var chars, r, i, c;
 
   r = [];
   for (i = 0; i < bytes.length; i++) {
-    r.push(UIDCHARS[bytes[i] % UIDCHARS.length]);
+    c = Math.round((bytes[i] * UIDCHARS.length) / 255);
+    r.push(UIDCHARS[c]);
   }
 
   return r.join('');

@@ -4,5 +4,11 @@
   "tags": ["uid"],
   "version": "0.0.3",
   "dependencies": {
-  }
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://raw.github.com/Coreh/uid2/master/LICENSE"
+    }
+  ]
 }

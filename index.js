@@ -18,7 +18,7 @@ var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
  * @api private
  */
 function tostr(bytes) {
-  var chars, r, i;
+  var r, i;
 
   r = [];
   for (i = 0; i < bytes.length; i++) {

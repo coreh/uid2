@@ -5,10 +5,10 @@
 var crypto = require('crypto');
 
 /**
- * 62 characters in the ascii range that can be used in URLs without special
+ * 64 characters in the ascii range that can be used in URLs without special
  * encoding.
  */
-var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 
 /**
  * Make a Buffer into a string ready for use in URLs

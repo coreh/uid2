@@ -13,6 +13,7 @@ for (i = 0; i < chars.length; i++) {
 }
 
 console.log("Running", ITERATIONS, "iterations...");
+console.time("Duration");
 
 while(ITERATIONS--) {
   var str = uid(LENGTH);
@@ -23,6 +24,7 @@ while(ITERATIONS--) {
 
 console.log("Done. Distribution:");
 console.log(JSON.stringify(freqs, undefined, 2));
+console.timeEnd("Duration");
 
 var vals = Object.keys(freqs).map(function(key) {
   return freqs[key];

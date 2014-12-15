@@ -1,3 +1,4 @@
+'use strict';
 /**
  * Module dependencies
  */
@@ -18,14 +19,13 @@ var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_
  * @api private
  */
 function tostr(bytes) {
-  var chars, r, i;
+  var r = '', i;
 
-  r = [];
   for (i = 0; i < bytes.length; i++) {
-    r.push(UIDCHARS[bytes[i] % UIDCHARS.length]);
+    r += UIDCHARS[bytes[i] % 64];
   }
 
-  return r.join('');
+  return r;
 }
 
 /**
@@ -37,14 +37,13 @@ function tostr(bytes) {
  */
 
 function uid(length, cb) {
-
   if (typeof cb === 'undefined') {
     return tostr(crypto.pseudoRandomBytes(length));
   } else {
     crypto.pseudoRandomBytes(length, function(err, bytes) {
        if (err) return cb(err);
        cb(null, tostr(bytes));
-    })
+    });
   }
 }
 

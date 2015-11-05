@@ -3,6 +3,8 @@
   "description": "strong uid",
   "tags": ["uid"],
   "version": "0.0.3",
-  "dependencies": {
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/coreh/uid2.git"
   }
 }

@@ -2,7 +2,7 @@
  * Module dependencies
  */
 
-var crypto = require('crypto');
+var randomBytes = require('randombytes');
 
 /**
  * 62 characters in the ascii range that can be used in URLs without special
@@ -39,13 +39,12 @@ function tostr(bytes) {
 function uid(length, cb) {
 
   if (typeof cb === 'undefined') {
-    return tostr(crypto.pseudoRandomBytes(length));
-  } else {
-    crypto.pseudoRandomBytes(length, function(err, bytes) {
-       if (err) return cb(err);
-       cb(null, tostr(bytes));
-    })
+    return tostr(randomBytes(length));
   }
+  randomBytes(length, function(err, bytes) {
+     if (err) return cb(err);
+     cb(null, tostr(bytes));
+  });
 }
 
 /**

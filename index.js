@@ -13,12 +13,12 @@ var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 /**
  * Make a Buffer into a string ready for use in URLs
  *
- * @param {String}
- * @returns {String}
+ * @param {String} bytes a Buffer containing the bytes to convert
+ * @returns {String} UID
  * @api private
  */
 function tostr(bytes) {
-  var chars, r, i;
+  var r, i;
 
   r = [];
   for (i = 0; i < bytes.length; i++) {

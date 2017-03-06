@@ -2,7 +2,7 @@
   "name": "uid2",
   "description": "strong uid",
   "tags": ["uid"],
-  "version": "0.0.3",
+  "version": "1.0.0",
   "dependencies": {
   }
 }

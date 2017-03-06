@@ -1,8 +1,26 @@
 {
-  "name": "uid2",
+  "name": "@abacuslabs/uid2",
   "description": "strong uid",
-  "tags": ["uid"],
+  "tags": [
+    "uid"
+  ],
   "version": "1.0.0",
-  "dependencies": {
-  }
+  "dependencies": {},
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abacuslabs/uid2.git"
+  },
+  "keywords": [
+    "uid2"
+  ],
+  "author": "Abacus",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abacuslabs/uid2/issues"
+  },
+  "homepage": "https://github.com/abacuslabs/uid2#readme"
 }

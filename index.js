@@ -14,15 +14,17 @@ var UIDCHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
  * Make a Buffer into a string ready for use in URLs
  *
  * @param {String}
+ * @param {String} characterSet - A string of characters from which to choose random
+ *  characters.
  * @returns {String}
  * @api private
  */
-function tostr(bytes) {
+function tostr(bytes, characterSet) {
   var r, i;
 
   r = [];
   for (i = 0; i < bytes.length; i++) {
-    r.push(UIDCHARS[bytes[i] % UIDCHARS.length]);
+    r.push(characterSet[bytes[i] % characterSet.length]);
   }
 
   return r.join('');
@@ -37,13 +39,23 @@ function tostr(bytes) {
  */
 
 function uid(length, cb) {
+  return uidWithCharacterSet(length, UIDCHARS, cb);
+}
 
+/**
+  *
+  * @param {Number} length - The number of characters of the uid
+  * @param {String} characterSet - A string of characters from which to choose random
+  *  characters.
+  * @param {function} cb - Callback for async uid generation
+  */
+function uidWithCharacterSet(length, characterSet, cb) {
   if (typeof cb === 'undefined') {
-    return tostr(crypto.pseudoRandomBytes(length));
+    return tostr(crypto.pseudoRandomBytes(length), characterSet);
   } else {
     crypto.pseudoRandomBytes(length, function(err, bytes) {
        if (err) return cb(err);
-       cb(null, tostr(bytes));
+       cb(null, tostr(bytes, characterSet));
     })
   }
 }
@@ -52,4 +64,5 @@ function uid(length, cb) {
  * Exports
  */
 
-module.exports = uid;
+module.exports = uidWithCharacterSet;
+

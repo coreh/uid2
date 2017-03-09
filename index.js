@@ -34,22 +34,22 @@ function tostr(bytes, characterSet) {
  * Generate an Unique Id
  *
  * @param {Number} length  The number of chars of the uid
+ * @param {String} characterSet (optional) - A string of characters from which to choose random
+  *  characters.
  * @param {Number} cb (optional)  Callback for async uid generation
  * @api public
  */
 
-function uid(length, cb) {
-  return uidWithCharacterSet(length, UIDCHARS, cb);
-}
+function uid(length, characterSet, cb) {
+  if (!characterSet) {
+    characterSet = UIDCHARS;
+  }
 
-/**
-  *
-  * @param {Number} length - The number of characters of the uid
-  * @param {String} characterSet - A string of characters from which to choose random
-  *  characters.
-  * @param {function} cb - Callback for async uid generation
-  */
-function uidWithCharacterSet(length, characterSet, cb) {
+  if (typeof characterSet === 'function') {
+    cb = characterSet
+    characterSet = UIDCHARS;
+  }
+
   if (typeof cb === 'undefined') {
     return tostr(crypto.pseudoRandomBytes(length), characterSet);
   } else {
@@ -60,9 +60,9 @@ function uidWithCharacterSet(length, characterSet, cb) {
   }
 }
 
+
 /**
  * Exports
  */
-
-module.exports = uidWithCharacterSet;
+module.exports = uid;
 

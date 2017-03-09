@@ -4,7 +4,7 @@
   "tags": [
     "uid"
   ],
-  "version": "1.0.0",
+  "version": "0.0.4",
   "dependencies": {},
   "main": "index.js",
   "scripts": {

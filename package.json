@@ -1,10 +1,11 @@
 {
-  "name": "uid2",
+  "name": "@xin55/uid2",
   "description": "strong uid",
   "tags": [
     "uid"
   ],
   "version": "0.0.3",
+  "repository": "git@github.com:aehrt55/uid2.git",
   "dependencies": {
     "randombytes": "^2.0.3"
   }

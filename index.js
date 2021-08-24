@@ -39,9 +39,9 @@ function tostr(bytes) {
 function uid(length, cb) {
 
   if (typeof cb === 'undefined') {
-    return tostr(crypto.randomBytes(length));
+    return tostr(crypto.pseudoRandomBytes(length));
   } else {
-    crypto.randomBytes(length, function(err, bytes) {
+    crypto.pseudoRandomBytes(length, function(err, bytes) {
        if (err) return cb(err);
        cb(null, tostr(bytes));
     })

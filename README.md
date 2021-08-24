@@ -1,6 +1,6 @@
 # uid2
 
-[![NPM version](https://badge.fury.io/js/uid2.png)](http://badge.fury.io/js/uid2)
+[![NPM version](https://badge.fury.io/js/uid2.svg)](http://badge.fury.io/js/uid2)
 
 Generate unique ids. Pass in a `length` and it returns a `string`.
 

@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/coreh/uid2.git"
   },
+  "license": "MIT",
   "dependencies": {
   }
 }

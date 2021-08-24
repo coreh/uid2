@@ -8,10 +8,5 @@
     "url": "https://github.com/coreh/uid2.git"
   },
   "license": "MIT",
-  "dependencies": {
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Coreh/uid2.git"
-  }
+  "dependencies": {}
 }

@@ -1,27 +1,32 @@
 # uid2
 
-strong uid.  Pass in a `length` and it returns a `string`.
-
 [![NPM version](https://badge.fury.io/js/uid2.png)](http://badge.fury.io/js/uid2)
+
+Generate unique ids. Pass in a `length` and it returns a `string`.
+
 
 ## Installation
 
     npm install uid2
 
-## Usage
+## Examples
 
-```javascript
-var uid = require('uid2');
+Without a callback it is synchronous:
 
-//synchronous usage
-var id = uid(length);
+```js
+uid(10)
+// => "hbswt489ts"
+```
 
-//asynchronous usage
-uid(length, function (err, id) {
+With a callback it is asynchronous:
+
+```js
+uid(10, function (err, id) {
   if (err) throw err;
+  // id => "hbswt489ts"
 });
 ```
 
 ## License
 
-  MIT
+MIT

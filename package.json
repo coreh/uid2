@@ -3,6 +3,11 @@
   "description": "strong uid",
   "tags": ["uid"],
   "version": "0.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coreh/uid2.git"
+  },
+  "license": "MIT",
   "dependencies": {
   },
   "repository": {

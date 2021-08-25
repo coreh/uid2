@@ -32,7 +32,7 @@ function tostr(bytes) {
  * Generate an Unique Id
  *
  * @param {Number} length  The number of chars of the uid
- * @param {Number} cb (optional)  Callback for async uid generation
+ * @param {Number} [cb]  Callback for async uid generation
  * @api public
  */
 

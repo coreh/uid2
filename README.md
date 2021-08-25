@@ -14,17 +14,32 @@ Generate unique ids. Pass in a `length` and it returns a `string`.
 Without a callback it is synchronous:
 
 ```js
-uid(10)
-// => "hbswt489ts"
+const uid = require('uid2');
+
+const id = uid(10);
+// id => "hbswt489ts"
 ```
 
 With a callback it is asynchronous:
 
 ```js
+const uid = require('uid2');
+
 uid(10, function (err, id) {
   if (err) throw err;
   // id => "hbswt489ts"
 });
+```
+
+Imported via `uid2/promises` it returns a `Promise`:
+
+```js
+const uid = require('uid2/promises');
+
+async function foo() {
+  const id = await uid(10);
+  // id => "hbswt489ts"
+}
 ```
 
 ## License

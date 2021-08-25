@@ -3,7 +3,7 @@
 - Add _README.md_
 - Add `repository` field to _package.json_
 - Add `license` field to _package.json_
-- Removed unused var, added param documentation
+- Remove unused var, added param documentation
 
 # 0.0.3 - July 6, 2013
 
